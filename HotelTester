@@ -1,0 +1,103 @@
+package assigments;
+
+public class HotelTester {
+	 public static void main(String[] args) {
+
+	       Hotel hotel = new Hotel("smallvile", "alabama");
+	       hotel.addRoom(101, "queen", 's', 2.5);
+	       hotel.addRoom(102, "king", 'n', 4.0);
+	       hotel.addRoom(103, "king", 's', 4.5);
+	       hotel.addRoom(104, "twin", 's', 5.0);
+	       hotel.addRoom(105, "queen", 'n', 3.0);
+	       System.out.println("There are total "+hotel.getNumberofRoom() + " rooms in the hotel");
+	       System.out.println("Checking if all the rooms in the hotel are empty");
+
+	       if(hotel.isEmpty()== true){
+
+	       System.out.println(" all the rooms in the hotel are empty");
+
+	       System.out.println("===================================================================");}
+
+	       else {
+
+	       System.out.println("The hotel is not empty. We have some occupants in here.\n");
+
+	       System.out.println("===================================================================");
+
+	       }
+
+	       System.out.println("Looking for reservation in the hotel");
+
+	       System.out.println("Reservation 1");
+
+	       hotel.addReservation("Dang Long", 'n', "king");
+
+	       System.out.println("\nReservation 2");
+
+	       hotel.addReservation("huy", 'n', "queen");
+
+	       System.out.println("\nReservation 3");
+
+	       hotel.addReservation("Quy",'s', "twin");
+
+	       System.out.println("===================================================================");
+
+	       System.out.println("Printing details of all the rooms which are occupied\n\n");
+
+	       hotel.printReservationList();
+
+	       System.out.println("===================================================================");
+
+	       System.out.println("\nChecking if the hotel is full or not");
+
+	       if(hotel.isFull()== true){
+
+	       System.out.println("Yes, all the rooms in the hotel are full");
+
+	       System.out.println("===================================================================");}
+
+	       else{
+
+	       System.out.println("The hotel is not full.\n");
+
+	       System.out.println("===================================================================");}
+
+	       System.out.println("Find the total sale for today");
+
+	       double sale = hotel.getDailySales();
+
+	       System.out.println("Total sale for today is $:"+sale+"0");
+
+	       System.out.println("===================================================================");
+
+	       System.out.println("\nLets check the occupancy percentage");
+
+	       double percentage = hotel.occupancyPercentage();
+
+	       System.out.println("Hotel occupancy percentage for today is :"+percentage+"0%");
+
+	       System.out.println("===================================================================");
+
+	       System.out.println("\nCancel the reservation for Brain");
+
+	       hotel.cancelReservation("Dang Long");
+
+	       System.out.println("===================================================================");
+
+	       System.out.println("Now that Dang Long's reservation is canceled, his details should not be printed");
+
+	       System.out.println("Printing details of all the rooms which are occupied\n\n");
+
+	       hotel.printReservationList();
+
+	       System.out.println("===================================================================");
+
+	       System.out.println("\n\nAll the methods are properly checked.");
+
+	       System.out.println("Printing the hotel details using toString method\n");
+
+	       System.out.println(hotel.toString());
+
+	   }
+
+	}
